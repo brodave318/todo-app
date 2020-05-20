@@ -6,7 +6,8 @@ function App() {
   const [input, setInput] = useState('')
   const [todos, setTodos] = useState([])
   const addTodo = (e) => {
-    e.preventDefault()
+    console.log("BOOM >", input)
+
     // Add to todos array
     setTodos([...todos, input])
     // Clear the input field
@@ -16,15 +17,13 @@ function App() {
   return (
     <div className="App">
       <h1>Todo app</h1>
+      <input value={input} onChange={e => setInput(e.target.value)} type="text" />
+      <button onClick={addTodo}>Add Todo</button>
 
-      <form>
-        <input value={input} onChange={e => setInput(e.target.value)} type="text" />
-        <button disabled={!input} type="submit" onClick={addTodo}>Add Todo</button>
-      </form>
       {/* Render todos */}
-      {todos.map((todo, i) => (
-        <Todo title={todo} key={i} />
-      ))}
+      {todos.map(todo => {
+        return <Todo title={todo} />
+      })}
     </div>
   );
 }

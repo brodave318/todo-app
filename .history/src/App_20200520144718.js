@@ -19,11 +19,11 @@ function App() {
 
       <form>
         <input value={input} onChange={e => setInput(e.target.value)} type="text" />
-        <button disabled={!input} type="submit" onClick={addTodo}>Add Todo</button>
+        <button type="submit" onClick={addTodo}>Add Todo</button>
       </form>
       {/* Render todos */}
-      {todos.map((todo, i) => (
-        <Todo title={todo} key={i} />
+      {todos.map(todo => (
+        <Todo title={todo} />
       ))}
     </div>
   );
