@@ -8,19 +8,12 @@ function App() {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    // Get data from database
-    db.collection('todos').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().title))
-    })
-  }, [])
-
+    console.log('Ran once')
+  })
   const addTodo = (e) => {
     e.preventDefault()
     // Add to todos array
-    // setTodos([...todos, input])
-    db.collection('todos').add({
-      title: input
-    })
+    setTodos([...todos, input])
     // Clear the input field
     setInput("")
   }

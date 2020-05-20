@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Todo from "./Todo"
 import db from "./firebase"
@@ -6,21 +6,10 @@ import db from "./firebase"
 function App() {
   const [input, setInput] = useState('')
   const [todos, setTodos] = useState([])
-
-  useEffect(() => {
-    // Get data from database
-    db.collection('todos').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => doc.data().title))
-    })
-  }, [])
-
   const addTodo = (e) => {
     e.preventDefault()
     // Add to todos array
-    // setTodos([...todos, input])
-    db.collection('todos').add({
-      title: input
-    })
+    setTodos([...todos, input])
     // Clear the input field
     setInput("")
   }

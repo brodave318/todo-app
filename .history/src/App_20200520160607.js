@@ -17,10 +17,7 @@ function App() {
   const addTodo = (e) => {
     e.preventDefault()
     // Add to todos array
-    // setTodos([...todos, input])
-    db.collection('todos').add({
-      title: input
-    })
+    setTodos([...todos, input])
     // Clear the input field
     setInput("")
   }
