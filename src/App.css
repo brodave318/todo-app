@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Chelsea+Market&display=swap');
+:root {
+  --blue-dark:rgb(14, 0, 92);
+  --white-blue : rgb(240, 243, 255);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  padding: 5%;
+  background: rgba(0, 185, 99, 0.418); 
+}
+
+.App {
+  background-color: rgb(236, 254, 255);
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 15px solid rgba(255, 224, 0, 0.42);
+  border-radius: 10px;
+}
+
+.App h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: var(--blue-dark);
+}
+
+.App h2 {  
+  font-family: 'Chelsea Market', cursive;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+form input {
+  width: 300px;
+  height: 50px;
+  font-family: 'Chelsea Market', cursive;
+  font-size: 24px;
+  padding-bottom: 5px;
+  border-bottom-color: var(--blue-dark);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  background-color: transparent;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form button {  
+  width: 120px;
+  height: 50px;
+  margin-bottom: 2rem;
+  font-family: 'Chelsea Market', cursive;  
+  font-size: larger;
+  color: var(--white-blue);
+  background-color: var(--blue-dark);
+  border: transparent;
+  border-radius:5px 5px 5px 0;
+}
+
+.background {
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.background:nth-child(odd) {
+  background-color: var(--blue-dark);
+  color: var(--white-blue);
+}
+
+.background:nth-child(even) {
+  color: var(--blue-dark);
+  background-color: var(--white-blue);
+}
